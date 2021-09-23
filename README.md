@@ -4,7 +4,11 @@
 ```
 npm install
 
- npm install --save axios vue-axios
+npm install vue bootstrap-vue bootstrap
+
+cnpm install bootstrap@4.5.3
+
+npm install --save axios vue-axios
 ```
 
 ### Compiles and hot-reloads for development

@@ -73,6 +73,9 @@ export default {
       if (this.user.telephone.length != 11) {
         this.ShowTelephoneDanger = true;
       }
+      this.axios.get("http://localhost:5000/api/auth/info").then(response => {
+        console.log(response.data);
+      });
       console.log("login");
     }
   }

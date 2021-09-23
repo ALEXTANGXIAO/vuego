@@ -5,11 +5,16 @@ import store from './store'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
 import './assets/scss/index.scss'
+
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 Vue.config.productionTip = false
 
 // Install BootstrapVue
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+
+Vue.use(VueAxios, axios)
 
 new Vue({
     router,

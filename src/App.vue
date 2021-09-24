@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <txTabBar />
     <navbar />
     <b-container>
       <router-view />
@@ -15,13 +16,14 @@
 
 <script>
 import Navbar from "./views/layout/Navbar.vue";
+import TxTabBar from "./views/txtabBar/TxTabBar.vue";
 export default {
-  components: { Navbar },
+  components: { Navbar, TxTabBar },
   name: "App",
   // img :  this.$refs.dom,
   data() {
     return {
-      bgImg: bgImg,
+      bgImg: bgImg
     };
     // },
     // beforeCreate: function () {
@@ -81,9 +83,9 @@ export default {
     //   console.log("%c%s", "color:red", "message: " + this.message);
     // },
     // };
-  },
+  }
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 </style>

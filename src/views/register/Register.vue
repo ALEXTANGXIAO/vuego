@@ -2,7 +2,11 @@
   <div class="register">
     <!-- register -->
     <b-form-group>
-      <b-button variant="primary" block @click="getref">getref</b-button>
+      <b-button
+        variant="primary"
+        block
+        @click="getref"
+      >getref</b-button>
     </b-form-group>
     <div class="shell">
       <div
@@ -23,7 +27,7 @@ export default {
   // img :  this.$refs.dom,
   data() {
     return {
-      bgImg: bgImg,
+      bgImg: bgImg
     };
   },
   methods: {
@@ -32,11 +36,11 @@ export default {
       console.log(this.$refs.dom);
       const img = this.$refs.dom;
       if (img != null) {
-        img.addEventListener("mouseenter", function (e) {
+        img.addEventListener("mouseenter", function(e) {
           this.x = e.clientX;
           this.y = e.clientY;
         });
-        img.addEventListener("mousemove", function (e) {
+        img.addEventListener("mousemove", function(e) {
           this._x = e.clientX;
           this._y = e.clientY;
           const disx = this._x - this.x;
@@ -46,9 +50,9 @@ export default {
           img.style.backgroundPosition = `${movex}px ${movey}px`;
         });
       }
-    },
+    }
   },
-  created: function () {
+  created: function() {
     console.group("created created完成状态===============》");
     console.log("%c%s", "color:green", "el     : " + this.$el);
     console.log(this.$el);
@@ -58,11 +62,11 @@ export default {
     console.log(this.$refs.dom);
     const img = this.$refs.dom;
     if (img != null) {
-      img.addEventListener("mouseenter", function (e) {
+      img.addEventListener("mouseenter", function(e) {
         this.x = e.clientX;
         this.y = e.clientY;
       });
-      img.addEventListener("mousemove", function (e) {
+      img.addEventListener("mousemove", function(e) {
         this._x = e.clientX;
         this._y = e.clientY;
         const disx = this._x - this.x;
@@ -72,11 +76,11 @@ export default {
         img.style.backgroundPosition = `${movex}px ${movey}px`;
       });
     }
-  },
+  }
 };
 </script>
 
-<style>
+<style scoped>
 * {
   padding: 0;
   margin: 0;

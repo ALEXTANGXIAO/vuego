@@ -51,6 +51,8 @@
 </template>
 
 <script>
+
+import storage from "@/service/storageService"
 export default {
   data() {
     return {
@@ -73,9 +75,19 @@ export default {
       if (this.user.telephone.length != 11) {
         this.ShowTelephoneDanger = true;
       }
-      this.axios.get("http://localhost:5000/api/auth/info").then(response => {
-        console.log(response.data);
-      });
+      const api = "http://localhost:5000/api/auth/login";
+      this.axios.post(api,{...this.user}).then(res => {
+        console.log(res)
+        //保存token
+        // storageService.set(storageService.USER_TOKEN,res.data.data.token)
+        localStorage.setItem("token", res.data.data.token);
+        //跳转到主页
+        this.$router.replace({ name:"Home"})
+      }).catch(
+        err => {
+          console.log(res.data.msg)
+        }
+      );
       console.log("login");
     }
   }
